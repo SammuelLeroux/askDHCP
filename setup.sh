@@ -8,9 +8,15 @@ chmod +x dhclient_script.sh
 cat <<EOF > /etc/systemd/system/dhclient.service
 [Unit]
 Description=DHCP Client on enp0s8
+After=network.target
 
 [Service]
-ExecStart=./dhclient_script.sh
+ExecStart=/path/to/your/script/dhclient_script.sh
+Restart=always
+RestartSec=3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dhclient-service
 
 [Install]
 WantedBy=multi-user.target

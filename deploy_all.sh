@@ -12,8 +12,8 @@ fi
 # Vérifie si Ansible est installé
 if ! command -v ansible &> /dev/null; then
     echo "Installation d'Ansible..."
-    sudo apt-get update
-    sudo apt-get install -y ansible
+    sudo apt update
+    sudo apt install -y ansible
 fi
 
 # Exécute le playbook Ansible

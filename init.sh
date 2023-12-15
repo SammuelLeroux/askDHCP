@@ -2,9 +2,16 @@
 
 # Vérifie si le répertoire existe, sinon le crée
 repo_dir="/root"
-if [ ! -d "$repo_dir" ]; then
+if [ ! -d "$repo_dir/askdhcp" ]; then
     echo "Création du répertoire $repo_dir/askdhcp"
     mkdir -p "$repo_dir/askdhcp"
+fi
+
+# Vérifie si unzip est installé, sinon le télécharge
+if ! command -v unzip &> /dev/null; then
+    echo "Installation de unzip..."
+    sudo apt update
+    sudo apt install -y unzip
 fi
 
 # Télécharge le repo GitHub avec wget

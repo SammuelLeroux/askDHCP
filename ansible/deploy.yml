@@ -1,0 +1,22 @@
+---
+- name: Deploy DHClient Script
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Copy DHClient Script
+      copy:
+        src: /root/askdhcp/scripts/config_intnet.sh
+        dest: /root/askdhcp/config_intnet.sh
+        mode: 0755
+
+    - name: Copy systemd Service
+      copy:
+        src: /root/askdhcp/scripts/dhclient_config.service
+        dest: /etc/systemd/system/dhclient_config.service
+        mode: 0644
+
+    - name: Enable and Start systemd Service
+      systemd:
+        name: dhclient_config
+        state: started
+        enabled: yes

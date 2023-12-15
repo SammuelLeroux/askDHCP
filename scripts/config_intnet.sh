@@ -9,6 +9,9 @@ fi
 
 echo "Interface réseau interne (enp0s8) trouvée : $internal_interface"
 
+# Affiche la configuration réseau de l'interface
+ip addr show $internal_interface
+
 sudo dhclient -r $internal_interface
 sudo dhclient $internal_interface
 

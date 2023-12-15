@@ -9,5 +9,12 @@ else
     echo "La clé SSH existe déjà."
 fi
 
+# Vérifie si Ansible est installé
+if ! command -v ansible &> /dev/null; then
+    echo "Installation d'Ansible..."
+    sudo apt-get update
+    sudo apt-get install -y ansible
+fi
+
 # Exécute le playbook Ansible
 ansible-playbook -i ansible/inventory.ini ansible/deploy.yml

@@ -3,8 +3,8 @@
 # Vérifie si le répertoire existe, sinon le crée
 repo_dir="/root"
 if [ ! -d "$repo_dir" ]; then
-    echo "Création du répertoire $repo_dir"
-    mkdir -p "$repo_dir"
+    echo "Création du répertoire $repo_dir/askdhcp"
+    mkdir -p "$repo_dir/askdhcp"
 fi
 
 # Télécharge le repo GitHub avec wget

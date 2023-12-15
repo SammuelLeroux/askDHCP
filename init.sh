@@ -18,7 +18,8 @@ fi
 echo "Téléchargement du repo GitHub..."
 wget -O "$repo_dir/askdhcp.zip" https://github.com/SammuelLeroux/askDHCP/archive/main.zip
 unzip "$repo_dir/askdhcp.zip" -d "$repo_dir"
-mv "$repo_dir/askDHCP-main" "$repo_dir/askdhcp"
+mv "$repo_dir/askDHCP-main"/* "$repo_dir/askdhcp/"
+rm -r "$repo_dir/askDHCP-main"
 rm "$repo_dir/askdhcp.zip"
 
 # Ajoute la commande pour exécuter le script config_intnet.sh dans /etc/rc.local

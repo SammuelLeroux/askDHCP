@@ -2,7 +2,7 @@
 Description=Configuration dhclient pour l'interface enp0s8
 
 [Service]
-ExecStart=/root/askdhcp/config_intnet.sh
+ExecStart=/root/askdhcp/scripts/config_intnet.sh
 Type=simple
 
 [Install]

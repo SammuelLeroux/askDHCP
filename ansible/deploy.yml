@@ -6,7 +6,7 @@
     - name: Copy DHClient Script
       copy:
         src: /root/askdhcp/scripts/config_intnet.sh
-        dest: /root/askdhcp/config_intnet.sh
+        dest: /root/askdhcp/scripts/config_intnet.sh
         mode: 0755
 
     - name: Copy systemd Service

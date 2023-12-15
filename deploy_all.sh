@@ -17,4 +17,4 @@ if ! command -v ansible &> /dev/null; then
 fi
 
 # Exécute le playbook Ansible
-ansible-playbook -i ansible/inventory.ini ansible/deploy.yml
+ansible-playbook -i /root/askdhcp/ansible/inventory.ini /root/askdhcp/ansible/deploy.yml
